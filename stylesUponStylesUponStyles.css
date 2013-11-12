@@ -2,23 +2,19 @@
 	position: relative; 
 	min-height: 100%;
 	min-width: 100%;
-	bottom: 0;
-	right: 0;
+	top: 0;
+	left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .hero {
+  background: url('joey_ian_savektru.jpg') no-repeat;
 	min-width: 1440px;
 	min-height: 100%;
 	min-width: 100%;
 	float: right;
-	bottom: 0;
-	right: 0;
-}
-
-img .hero {
-	position: fixed;
-	bottom: 0;
-	right: 0;
+  position: fixed;
+  right: 0;
 }
 
 
@@ -29,16 +25,16 @@ body {
 }
 
 div .main-text, .sub-text {
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.7);
 	padding: 12px;
 	margin-right: 16px;
 }
 
 div .main-text { 
    position: absolute; 
-   top: 140px;
+   top: 50px;
    left: 0;
-   margin-left: 64px;
+   margin-left: 32px;
 }
 .main-text .main-p {
 	color: white;
@@ -55,9 +51,9 @@ h1 {
 
 div .sub-text { 
    position: absolute;
-   top: 320px;
+   top: 170px;
    left: 0; 
-   margin-left: 64px;
+   margin-left: 32px;
 }
 
 p {
@@ -75,7 +71,6 @@ a:link, a:visited, a:active {
 	color: white;
 }
 a:hover{ 
-	text-decoration: bold;
 	color: white;
 }
 
@@ -84,28 +79,87 @@ span.mobile {
 }
 
 @media only screen and (max-width: 768px) {
-	div .main-text { 
-  		top: 60px;
-  		margin-left: 16px;
-  	}
-  	.main-text .main-p {
-		font: 18px Helvetica, sans-serif;
-		margin-top: 8px;
-	}
-	div .sub-text { 
- 		top: 180px;
- 		margin-left: 16px;
- 	}
- 	h1 {
-  	font: bold 32px Helvetica, sans-serif;
-	}
-	p {
-		font: 16px Helvetica, sans-serif;
-	}
+  .image {
+    position: relative;
+  }
+  .hero {
+    background: url('joey_ian_savektru_medium.png');
+    min-width: 1440px;
+    min-height: 100%;
+    min-width: 100%;
+    float: right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  div .main-text { 
+      top: 90px;
+      margin-left: 16px;
+    }
+
+    .main-text .main-p {
+      font: 24px Helvetica, sans-serif;
+      margin-top: 8px;
+    }
+
+  div .sub-text { 
+    top: 275px;
+    margin-left: 16px;
+  }
+  h1 {
+    font: bold 48px Helvetica, sans-serif;
+  }
+  p {
+    font: 24px Helvetica, sans-serif;
+  }
   span.mobile {
     display: inline;
   }
 }
+
+@media only screen and (max-width: 481px) {
+  .image {
+    position: relative;
+  }
+  .hero {
+    background: url('joey_ian_savektru_narrow.png');
+    min-width: 1440px;
+    min-height: 100%;
+    min-width: 100%;
+    float: right;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  div .main-text { 
+      top: 15px;
+      margin-left: 16px;
+    }
+
+    .main-text .main-p {
+      font: 18px Helvetica, sans-serif;
+      margin-top: 8px;
+    }
+
+  div .sub-text { 
+    top: 275px;
+    margin-left: 16px;
+  }
+  h1 {
+    font: bold 32px Helvetica, sans-serif;
+  }
+  p {
+    font: 16px Helvetica, sans-serif;
+  }
+  span.mobile {
+    display: inline;
+  }
 }
 
 
