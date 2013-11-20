@@ -9,9 +9,9 @@
 
 .hero {
   background: url('joey_ian_savektru.jpg') no-repeat;
-	min-width: 1440px;
-	min-height: 100%;
+  background-size: cover;
 	min-width: 100%;
+  min-height: 100%;
 	float: right;
   position: fixed;
   right: 0;
@@ -26,7 +26,7 @@ body {
 
 div .main-text, .sub-text {
 	background-color: rgba(0, 0, 0, 0.7);
-	padding: 12px;
+	padding: 16px;
 	margin-right: 16px;
 }
 
@@ -43,7 +43,7 @@ div .main-text {
 }
 h1 {
 	color: white;
-	font: bold 72px Helvetica, sans-serif;
+	font: bold 64px Helvetica, sans-serif;
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
@@ -58,7 +58,7 @@ div .sub-text {
 
 p {
 	color: white;
-  font: 24px Helvetica, sans-serif;
+  font: 20px Helvetica, sans-serif;
 	margin: 2px 0px;
 }
 
