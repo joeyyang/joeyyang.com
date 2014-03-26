@@ -1,66 +1,70 @@
+/*
+ * STYLES UPON STYLES UPON STYLES IS WHAT I HAVE
+ * YOU WANNA DISS CSS, BUT YOU STILL DON'T KNOW THE HALF
+ */
 
 .image {
-	position: relative; 
-	min-height: 100%;
-	min-width: 100%;
-	top: 0;
-	left: 0;
+  position: relative;
+  min-height: 100%;
+  min-width: 100%;
+  top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.7);
 }
 
 .hero {
   background: url('joey_ian_savektru.jpg') no-repeat;
   background-size: cover;
-	min-width: 100%;
+  min-width: 100%;
   min-height: 100%;
-	float: right;
+  float: right;
   position: fixed;
   right: 0;
 }
 
-
 body {
-	margin: 0;
-	padding: 0;
-	border: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 div .main-text, .sub-text {
-	background-color: rgba(0, 0, 0, 0.7);
-	padding: 16px;
-	margin-right: 16px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 16px;
+  margin-right: 16px;
 }
 
-div .main-text { 
-   position: absolute; 
-   top: 50px;
-   left: 0;
-   margin-left: 32px;
+div .main-text {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  margin-left: 32px;
 }
+
 .main-text .main-p {
-	color: white;
-	font: 30px Helvetica, sans-serif;
-	margin-top: 8px;
+  color: white;
+  font: 30px Helvetica, sans-serif;
+  margin-top: 8px;
 }
+
 h1 {
-	color: white;
-	font: bold 64px Helvetica, sans-serif;
-	margin-top: 0px;
-	margin-bottom: 0px;
+  color: white;
+  font: bold 64px Helvetica, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-
-div .sub-text { 
-   position: absolute;
-   top: 170px;
-   left: 0; 
-   margin-left: 32px;
+div .sub-text {
+  position: absolute;
+  top: 170px;
+  left: 0;
+  margin-left: 32px;
 }
 
 p {
-	color: white;
+  color: white;
   font: 20px Helvetica, sans-serif;
-	margin: 2px 0px;
+  margin: 2px 0px;
 }
 
 p.sidenote {
@@ -68,11 +72,12 @@ p.sidenote {
 }
 
 a:link, a:visited, a:active {
-	text-decoration: underline;
-	color: white;
+  text-decoration: underline;
+  color: white;
 }
-a:hover{ 
-	color: white;
+
+a:hover{
+  color: white;
 }
 
 span.mobile {
@@ -96,29 +101,33 @@ span.mobile {
     right: 0;
   }
 
-  div .main-text { 
-      top: 90px;
-      margin-left: 16px;
-    }
+  div .main-text {
+    top: 90px;
+    margin-left: 16px;
+  }
 
-    .main-text .main-p {
-      font: 24px Helvetica, sans-serif;
-      margin-top: 8px;
-    }
+  .main-text .main-p {
+    font: 24px Helvetica, sans-serif;
+    margin-top: 8px;
+  }
 
-  div .sub-text { 
+  div .sub-text {
     top: 275px;
     margin-left: 16px;
   }
+
   h1 {
     font: bold 48px Helvetica, sans-serif;
   }
+
   p {
     font: 24px Helvetica, sans-serif;
   }
+
   span.mobile {
     display: inline;
   }
+
 }
 
 
@@ -126,6 +135,7 @@ span.mobile {
   .image {
     position: relative;
   }
+
   .hero {
     background: url('joey_ian_savektru_narrow.png');
     min-width: 1440px;
@@ -140,7 +150,7 @@ span.mobile {
     overflow-y: scroll;
   }
 
-  div .main-text { 
+  div .main-text {
       top: 15px;
       margin-left: 16px;
     }
@@ -150,7 +160,7 @@ span.mobile {
       margin-top: 8px;
     }
 
-  div .sub-text { 
+  div .sub-text {
     top: 267px;
     padding: 9px;
     margin-left: 16px;
@@ -159,12 +169,14 @@ span.mobile {
   h1 {
     font: bold 32px Helvetica, sans-serif;
   }
+
   p {
     font: 16px Helvetica, sans-serif;
   }
+
   span.mobile {
     display: inline;
   }
-}
 
+}
 
