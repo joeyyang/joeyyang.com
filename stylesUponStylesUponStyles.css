@@ -1,3 +1,4 @@
+
 .image {
 	position: relative; 
 	min-height: 100%;
@@ -120,6 +121,7 @@ span.mobile {
   }
 }
 
+
 @media only screen and (max-width: 481px) {
   .image {
     position: relative;
@@ -135,6 +137,7 @@ span.mobile {
     left: 0;
     bottom: 0;
     right: 0;
+    overflow-y: scroll;
   }
 
   div .main-text { 
@@ -148,9 +151,11 @@ span.mobile {
     }
 
   div .sub-text { 
-    top: 275px;
+    top: 267px;
+    padding: 9px;
     margin-left: 16px;
   }
+
   h1 {
     font: bold 32px Helvetica, sans-serif;
   }
@@ -161,8 +166,5 @@ span.mobile {
     display: inline;
   }
 }
-
-
-
 
 
