@@ -1,7 +1,9 @@
-/*
+/**
  * STYLES UPON STYLES UPON STYLES IS WHAT I HAVE
- * YOU WANNA DISS CSS, BUT YOU STILL DON'T KNOW THE HALF
- * - Phife Dawg, if he were a software engineer
+ * WANNA DISS CSS, BUT I STILL DON'T KNOW THE HALF
+ * - Phife Dawg (a.k.a. "the Funky Diabetic",
+                 a.k.a. "the Five Foot Assassin",
+                 a.k.a. "the Five Footer")
  */
 
 .image {
@@ -31,7 +33,7 @@ body {
 
 div .main-text, .sub-text {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 16px;
+  padding: 8px 16px;
   margin-right: 16px;
 }
 
@@ -60,11 +62,13 @@ div .sub-text {
   top: 170px;
   left: 0;
   margin-left: 32px;
+  max-width: 480px;
 }
 
 p {
   color: white;
   font: 20px Helvetica, sans-serif;
+  line-height: 24px;
   margin: 2px 0px;
 }
 
@@ -128,7 +132,6 @@ span.mobile {
   span.mobile {
     display: inline;
   }
-
 }
 
 
@@ -152,14 +155,14 @@ span.mobile {
   }
 
   div .main-text {
-      top: 15px;
-      margin-left: 16px;
-    }
+    top: 15px;
+    margin-left: 16px;
+  }
 
-    .main-text .main-p {
-      font: 18px Helvetica, sans-serif;
-      margin-top: 8px;
-    }
+  .main-text .main-p {
+    font: 18px Helvetica, sans-serif;
+    margin-top: 8px;
+  }
 
   div .sub-text {
     top: 267px;
@@ -178,6 +181,4 @@ span.mobile {
   span.mobile {
     display: inline;
   }
-
 }
-
