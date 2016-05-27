@@ -29,7 +29,12 @@
 	</head>
 
 	<body>
-		<div id="info">Views from the Three.js (view <a href="">source code</a>)</div>
+		<div id="info">Views from the <a href="http://threejs.org/">Three.js</a>
+			<br>
+		  (view <a href="https://github.com/joeyyang/joeyyang.com/blob/master/viewsfromthe3.html">source code</a>, based on <a href="http://threejs.org/examples/#webgl_animation_cloth">example</a>)
+		  <br>
+		  made by <a href="https://twitter.com/kanyang">joey yang</a>
+		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
 
@@ -75,38 +80,14 @@
 
 		<script>
 
-			/* testing cloth simulation */
-
-			// var pinsFormation = [];
-			// var pins = [ 6 ];
-
-			// pinsFormation.push( pins );
-
-			// pins = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-			// pinsFormation.push( pins );
-
-			// pins = [ 0 ];
-			// pinsFormation.push( pins );
-
-			// pins = []; // cut the rope ;)
-			// pinsFormation.push( pins );
-
-			// pins = [ 0, cloth.w ]; // classic 2 pins
-			// pinsFormation.push( pins );
-
-			// pins = pinsFormation[ 1 ];
-
-
-			// function togglePins() {
-
-			// 	pins = pinsFormation[ ~~ ( Math.random() * pinsFormation.length ) ];
-
-			// }
-
-			// SET PINS UP LEFT SIDE OF FLAG
+			/**
+			 * set the pins up on the left side of the flag
+			 * pins are 0-indexed and there are 11 pins in each row
+			 */
 			var pins = [];
 			var ROWS = 11;
-			for (var i = 0; i < ROWS; i++) {
+			var COLS = 11;
+			for (var i = 0; i < COLS; i++) {
 				pins.push(i * ROWS);
 			}
 
@@ -128,26 +109,18 @@
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
-				// scene
-
+				// SCENE
 				scene = new THREE.Scene();
 				scene.fog = new THREE.Fog( 0xcce0ff, 500, 10000 );
 
-				// camera
-				// var axisHelper = new THREE.AxisHelper( 1000 );
-				// scene.add( axisHelper );
-
+				// CAMERA
 				camera = new THREE.PerspectiveCamera( 20, window.innerWidth / window.innerHeight, 1, 10000 );
 				camera.position.x = -000;
 				camera.position.y = -2000;
 				camera.position.z = 2000;
-				// var vector = new THREE.Vector3(0, 0, -1);
-				// camera = new THREE.PerspectiveCamera(30, window.innerWidth / window.innerHeight, 1, 10000);
-				// camera.lookAt(vector);
 				scene.add( camera );
 
-				// lights
-
+				// LIGHTS
 				var light, materials;
 
 				scene.add( new THREE.AmbientLight( 0x666666 ) );
@@ -172,7 +145,7 @@
 
 				scene.add( light );
 
-				// cloth material (crying jordan)
+				// CLOTH MATERIAL (CRYING JORDAN)
 				var loader = new THREE.TextureLoader();
 				var clothTexture = loader.load( './assets/crying_jordan.jpg' );
 				clothTexture.wrapS = clothTexture.wrapT = THREE.RepeatWrapping;
@@ -185,21 +158,17 @@
 					alphaTest: 0.5
 				} );
 
-				// cloth geometry
+				// CLOTH GEOMETRY
 				clothGeometry = new THREE.ParametricGeometry( clothFunction, cloth.w, cloth.h );
-				// clothGeometry.rotateZ(Math.PI / 4);
 				clothGeometry.dynamic = true;
 
 				var uniforms = { texture:  { type: "t", value: clothTexture } };
 				var vertexShader = document.getElementById( 'vertexShaderDepth' ).textContent;
 				var fragmentShader = document.getElementById( 'fragmentShaderDepth' ).textContent;
 
-				// cloth mesh
-
+				// CLOTH MESH
 				object = new THREE.Mesh( clothGeometry, clothMaterial );
 				object.position.set( 0, -250, 0 );
-				// object.rotation.set( 0, 0, Math.PI / 2);  // avoid rotation, as the simulation of the wind doesn't take the rotation into account
-				// object.rotation.z = Math.PI / 2; // attach the flag to the pole
 				object.castShadow = true;
 
 				scene.add( object );
@@ -212,8 +181,7 @@
 				} );
 
 
-				// sphere
-
+				// SPHERE
 				var ballGeo = new THREE.SphereGeometry( ballSize, 20, 20 );
 				var ballMaterial = new THREE.MeshPhongMaterial( { color: 0xaaaaaa } );
 
@@ -222,11 +190,9 @@
 				sphere.receiveShadow = true;
 				scene.add( sphere );
 
-				// ground
-
+				// GROUND
 				var groundTexture = loader.load( './assets/views.jpg' );
 				groundTexture.wrapS = groundTexture.wrapT = THREE.RepeatWrapping;
-				// groundTexture.repeat.set( 10, 10 );
 				groundTexture.anisotropy = 16;
 
 				var groundMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, map: groundTexture } );
@@ -234,12 +200,10 @@
 				var mesh = new THREE.Mesh( new THREE.PlaneBufferGeometry( 1000, 1000 ), groundMaterial );
 				mesh.position.y = -750;
 				mesh.position.x = 100;
-				// mesh.rotation.x = - Math.PI / 2;
 				mesh.receiveShadow = true;
 				scene.add( mesh );
 
-				// poles
-
+				// POLES
 				var poleGeo = new THREE.BoxGeometry( 5, 375, 5 );
 				var poleMat = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, shininess: 100 } );
 
@@ -250,27 +214,7 @@
 				mesh.castShadow = true;
 				scene.add( mesh );
 
-				// var mesh = new THREE.Mesh( poleGeo, poleMat );
-				// mesh.position.x = 125;
-				// mesh.position.y = - 62;
-				// mesh.receiveShadow = true;
-				// mesh.castShadow = true;
-				// scene.add( mesh );
-
-				// var mesh = new THREE.Mesh( new THREE.BoxGeometry( 255, 5, 5 ), poleMat );
-				// mesh.position.y = - 250 + ( 750 / 2 );
-				// mesh.position.x = 0;
-				// mesh.receiveShadow = true;
-				// mesh.castShadow = true;
-				// scene.add( mesh );
-
 				var gg = new THREE.BoxGeometry( 10, 10, 10 );
-				// var mesh = new THREE.Mesh( gg, poleMat );
-				// mesh.position.y = - 250;
-				// mesh.position.x = 125;
-				// mesh.receiveShadow = true;
-				// mesh.castShadow = true;
-				// scene.add( mesh );
 
 				var mesh = new THREE.Mesh( gg, poleMat );
 				mesh.position.y = - 250;
@@ -279,8 +223,7 @@
 				mesh.castShadow = true;
 				scene.add( mesh );
 
-				// renderer
-
+				// RENDERER
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
@@ -293,25 +236,20 @@
 
 				renderer.shadowMap.enabled = true;
 
-				// controls
+				// CONTROLS
 				var controls = new THREE.OrbitControls( camera, renderer.domElement );
 				controls.maxPolarAngle = Math.PI * 0.5;
 				controls.minDistance = 1000;
 				controls.maxDistance = 7500;
 
-				// performance monitor
-
+				// PERFORMANCE MONITOR
 				stats = new Stats();
 				container.appendChild( stats.dom );
-
-				//
 
 				window.addEventListener( 'resize', onWindowResize, false );
 
 				sphere.visible = ! true
 			}
-
-			//
 
 			function onWindowResize() {
 
@@ -322,16 +260,13 @@
 
 			}
 
-			//
-
 			function animate() {
 
 				requestAnimationFrame( animate );
 
 				var time = Date.now();
 
-				// windStrength = Math.cos( time / 7000 ) * 20 + 40;
-				windStrength = 420 * 0.69;
+				windStrength = 420 * 0.69; 			// nice & honorable wind
 				windForce.set( Math.sin( time / 2000 ), Math.abs(Math.cos( time / 3000 )), Math.sin( time / 100 ) ).normalize().multiplyScalar( windStrength );
 
 				simulate( time );
